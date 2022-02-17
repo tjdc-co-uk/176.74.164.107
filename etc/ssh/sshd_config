@@ -1,15 +1,28 @@
-AcceptEnv LANG LC_CTYPE LC_NUMERIC LC_TIME LC_COLLATE LC_MONETARY LC_MESSAGES
+AcceptEnv LANG LC_*
 AcceptEnv LC_IDENTIFICATION LC_ALL LANGUAGE
 AcceptEnv LC_PAPER LC_NAME LC_ADDRESS LC_TELEPHONE LC_MEASUREMENT
 AcceptEnv XMODIFIERS
 ChallengeResponseAuthentication no
+# http://fredericiana.com/2009/10/21/keeping-ssh-from-disconnecting-automatically
+ClientAliveInterval 300
+ClientAliveCountMax 3333
 DenyUsers smartkey
 GSSAPIAuthentication yes
 GSSAPICleanupCredentials yes
+HostbasedAuthentication no
+IgnoreRhosts yes
+LogLevel INFO
+# Клиент должен авторизоваться за 2 минуты.
+LoginGraceTime 120
 PasswordAuthentication yes
-PermitRootLogin no
+PermitRootLogin yes
+PrintLastLog yes
+PrintMotd no
 Protocol 2
 Subsystem	sftp	/usr/libexec/openssh/sftp-server
 SyslogFacility AUTHPRIV
+TCPKeepAlive yes
 UsePAM yes
+UsePrivilegeSeparation yes
+X11DisplayOffset 10
 X11Forwarding yes
