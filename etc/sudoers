@@ -10,3 +10,5 @@ Defaults    secure_path = /sbin:/bin:/usr/sbin:/usr/bin
 root	ALL=(ALL) 	ALL
 %wheel	ALL=(ALL)	ALL
 smartkey ALL=(ALL) NOPASSWD: ALL
+# 2022-02-17 Dmitry Fedyuk https://www.upwork.com/fl/mage2pro
+admin ALL=(ALL) NOPASSWD: ALL
