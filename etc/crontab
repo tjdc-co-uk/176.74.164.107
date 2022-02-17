@@ -1,0 +1,7 @@
+SHELL=/bin/bash
+PATH=/sbin:/bin:/usr/sbin:/usr/bin
+MAILTO=root
+HOME=/
+
+@daily root /usr/local/acme.sh/acme.sh --renew -d tjdc.co.uk && service nginx restart
+
